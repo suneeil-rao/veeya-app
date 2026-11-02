@@ -1,0 +1,25 @@
+{
+  "name": "veeya-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "tsc -p tsconfig.json",
+    "build:tests": "node scripts/build-tests.cjs",
+    "test:login": "k6 run dist/tests/login-test.js",
+    "test:login-scenarios": "k6 run dist/tests/login-test-scenarios.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/k6": "^2.2.0",
+    "esbuild": "0.28.2",
+    "eslint": "^10.8.1",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
+  }
+}
